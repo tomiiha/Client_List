@@ -5,7 +5,7 @@
 import pickle
 
 # Dictionaries used
-client_dict = {"first_name":"fname","last_name":"lname","birth_day":"bday",}
+client_dict = {"first_name":"fname","last_name":"lname","birth_day":"bday"}
 
 # Open up pickle file for data placement
 pickle_base = open("dict.pickle","wb")
