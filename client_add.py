@@ -10,9 +10,9 @@ except:
     print("DB Initialization Failed")
     
 # DB Entry
-def client_add(FName,Phone):
-    print(FName)
-    print(Phone)
+def client_add():
+    print(FName.get())
+    print(Phone.get())
     return 999
 
 # GUI Points
@@ -28,6 +28,6 @@ Phone.grid(row=1, column=1)
 
 # GUI Interactibles
 tk.Button(entry_point, text='Quit', command=entry_point.quit).grid(row=3, column=0, sticky=tk.W, pady=4)
-tk.Button(entry_point, text='Submit', command=client_add(FName, Phone)).grid(row=3, column=1, sticky=tk.W, pady=4)
+tk.Button(entry_point, text='Submit', command=client_add).grid(row=3, column=1, sticky=tk.W, pady=4)
 
 entry_point.mainloop()
