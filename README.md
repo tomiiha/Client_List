@@ -4,5 +4,6 @@ Python Script for client list creation, retention, and exporting. Curently on ic
 
 **Currently under work:**
   1. Client input for basic details.
-  2. Set up of Pickling for details.
-  3. Simple exporting of list to Excel files.
+  2. GUI Build
+  3. Simple Excel Export
+  4. DB Interactability
