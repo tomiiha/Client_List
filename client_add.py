@@ -8,11 +8,10 @@ try:
     cur = conn.cursor()
 except:
     print("DB Initialization Failed")
-
 # DB Entry
 def client_add():
-    print(FName.get())
-    print(Phone.get())
+    for var in var_list:
+        print(var.get())
     final_tag = 0
     return final_tag
 
@@ -26,16 +25,17 @@ tk.Label(entry_point, text="Emerg Contact").grid(row=3)
 tk.Label(entry_point, text="Emerg Phone").grid(row=4)
 
 # Capture Variables
-FName = tk.Entry(entry_point)
-FName.grid(row=0, column=1)
-Phone = tk.Entry(entry_point)
-Phone.grid(row=1, column=1)
+f_name = tk.Entry(entry_point)
+f_name.grid(row=0, column=1)
+phone = tk.Entry(entry_point)
+phone.grid(row=1, column=1)
 email = tk.Entry(entry_point)
 email.grid(row=2, column=1)
 e_con = tk.Entry(entry_point)
 e_con.grid(row=3, column=1)
 e_phon = tk.Entry(entry_point)
 e_phon.grid(row=4, column=1)
+var_list = [f_name, phone, email, e_con,e_phon]
 
 # GUI Interactibles
 tk.Button(entry_point, text='Quit', command=entry_point.quit).grid(row=5, column=0, sticky=tk.W, pady=4)
