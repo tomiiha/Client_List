@@ -8,6 +8,7 @@ try:
     cur = conn.cursor()
 except:
     print("DB Initialization Failed")
+
 # DB Entry
 def client_add():
     print(FName.get())
