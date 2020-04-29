@@ -8,6 +8,7 @@ try:
     cur = conn.cursor()
 except:
     print("DB Initialization Failed")
+    
 # DB Entry
 def client_add():
     for var in var_list:
@@ -15,8 +16,13 @@ def client_add():
     final_tag = 0
     return final_tag
 
+# GUI Customizations
+app_width = 300
+app_height = 400
+
 # GUI Points
 entry_point = tk.Tk()
+entry_point.geometry(str(app_height) + 'x' + str(app_width))
 entry_point.title("Client List App")
 tk.Label(entry_point, text="Full Name").grid(row=0)
 tk.Label(entry_point, text="Phone Number").grid(row=1)
@@ -25,20 +31,20 @@ tk.Label(entry_point, text="Emerg Contact").grid(row=3)
 tk.Label(entry_point, text="Emerg Phone").grid(row=4)
 
 # Capture Variables
-f_name = tk.Entry(entry_point)
+f_name = tk.Entry(entry_point, width=(app_width // 6))
 f_name.grid(row=0, column=1)
-phone = tk.Entry(entry_point)
+phone = tk.Entry(entry_point, width=(app_width // 6))
 phone.grid(row=1, column=1)
-email = tk.Entry(entry_point)
+email = tk.Entry(entry_point, width=(app_width // 6))
 email.grid(row=2, column=1)
-e_con = tk.Entry(entry_point)
+e_con = tk.Entry(entry_point, width=(app_width // 6))
 e_con.grid(row=3, column=1)
-e_phon = tk.Entry(entry_point)
+e_phon = tk.Entry(entry_point, width=(app_width // 6))
 e_phon.grid(row=4, column=1)
-var_list = [f_name, phone, email, e_con,e_phon]
+var_list = [f_name, phone, email, e_con, e_phon]
 
 # GUI Interactibles
-tk.Button(entry_point, text='Quit', command=entry_point.quit).grid(row=5, column=0, sticky=tk.W, pady=4)
-tk.Button(entry_point, text='Submit', command=client_add).grid(row=5, column=1, sticky=tk.W, pady=4)
+tk.Button(entry_point, text='Quit', command=entry_point.quit).grid(row=5, column=0, sticky=tk.W, pady=1)
+tk.Button(entry_point, text='Submit', command=client_add).grid(row=5, column=1, sticky=tk.W, pady=1)
 
 entry_point.mainloop()
